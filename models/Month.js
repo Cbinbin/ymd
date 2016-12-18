@@ -4,14 +4,15 @@ const Year = require('./Year')
 const Day = require('./Day')
 
 const monthSchema = new mongoose.Schema({
+	_id: Number,
 	m_owner: {
-		type: Schema.Types.ObjectId,
+		type: Number,//Schema.Types.ObjectId,
 		ref: 'Year'
 	},
 	m_name: String,
 	days: Number,
 	child_d: [{
-		type: Schema.Types.ObjectId,
+		type: Number,//Schema.Types.ObjectId,
 		ref: 'Day'
 	}]
 },

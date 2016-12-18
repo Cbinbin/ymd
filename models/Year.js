@@ -3,9 +3,10 @@ const Schema = mongoose.Schema
 const Month = require('./Month')
 
 const yearSchema = new mongoose.Schema({
+	_id: Number,
 	y_name: String,
 	child_m: [{
-		type: Schema.Types.ObjectId,
+		type: Number,//Schema.Types.ObjectId,
 		ref: 'Month'
 	}]
 },

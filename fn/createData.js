@@ -5,7 +5,7 @@ const Month = require('../models/Month')
 const Day = require('../models/Day')
 
 function createData() {
-	var ObjectId = mongoose.Types.ObjectId
+	// var ObjectId = mongoose.Types.ObjectId
 	var y = []
 	var m = []
 	var m1 = [], m2 = [], m3 = [], m4 = [], 
@@ -13,11 +13,11 @@ function createData() {
 		m9 = [], m10 = [], m11 = [], m12 = []
 	var mi = [m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12]
 	var d = []
-	var yearIds = [new ObjectId]
+	var yearIds = [1]
 	var monthIds = []
 	var dayIds = []
 	for(var j=0; j<365; j++) {
-		dayIds[j] = new ObjectId
+		dayIds[j] = j+1
 		if(j<31) m1[j] = dayIds[j]
 		if(j>=31 && j<59) m2[j-31] = dayIds[j]
 		if(j>=59 && j<90) m3[j-59] = dayIds[j]
@@ -32,7 +32,7 @@ function createData() {
 		if(j>=334 && j<365) m12[j-334] = dayIds[j]
 	}
 	for(var i=0; i<12; i++) {
-		monthIds[i] = new ObjectId
+		monthIds[i] = i+1
 		m.push({
 			_id: monthIds[i],
 			m_owner: yearIds[0],

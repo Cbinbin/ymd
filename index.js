@@ -42,7 +42,7 @@ router.get('/day/:m/:d', (req, res)=> {
 		var dd = []
 		alld.map((item)=> {
 			if(item.d_owner != null) {
-				dd.push({item})
+				dd.push(item)
 			}
 		})
 		res.send(dd)

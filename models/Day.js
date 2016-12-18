@@ -3,8 +3,9 @@ const Schema = mongoose.Schema
 const Month = require('./Month')
 
 const daySchema = new mongoose.Schema({
+	_id: Number,
 	d_owner: {
-		type: Schema.Types.ObjectId,
+		type: Number,//Schema.Types.ObjectId,
 		ref: 'Month'
 	},
 	d_name: String
